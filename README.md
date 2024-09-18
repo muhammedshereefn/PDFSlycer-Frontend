@@ -65,7 +65,7 @@ Make sure you have the following installed on your machine:
    The app will be available at `http://localhost:3000` in your browser.
 
 
-```
+
 
 ## Live Demo
 
