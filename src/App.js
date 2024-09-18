@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   const getPdf = async () => {
-    const result = await axios.get('http://localhost:5000/get-files');
+    const result = await axios.get('https://pdfslycer-backend.onrender.com/get-files');
     console.log(result.data.data);
     setAllImage(result.data.data);
   };
@@ -33,7 +33,7 @@ function App() {
     formData.append('title', title);
     formData.append('file', file);
 
-    const result = await axios.post('http://localhost:5000/upload-files', formData, {
+    const result = await axios.post('https://pdfslycer-backend.onrender.com/upload-files', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
       withCredentials: true
     });
@@ -44,12 +44,12 @@ function App() {
   };
 
   const showPdf = (pdf) => {
-    setPdfFile(`http://localhost:5000/files/${pdf}`);
+    setPdfFile(`https://pdfslycer-backend.onrender.com/files/${pdf}`);
   };
 
   const deletePdf = async (pdfId) => {
     try {
-      await axios.delete(`http://localhost:5000/delete-file/${pdfId}`);
+      await axios.delete(`https://pdfslycer-backend.onrender.com/delete-file/${pdfId}`);
       getPdf();
       toast.success('Deleted successfully!');
     } catch (error) {
