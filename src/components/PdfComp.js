@@ -44,7 +44,7 @@ function PdfComp(props) {
     if (selectedPages.length > 0) {
         try {
             const response = await axios.post(
-                'https://pdfslycer-backend.onrender.com/download-selected-pages',
+                'http://localhost:5001/api/pdf/download-selected-pages',
                 {
                     pdfFile: props.pdfFile.split('/').pop(),
                     selectedPages: selectedPages
